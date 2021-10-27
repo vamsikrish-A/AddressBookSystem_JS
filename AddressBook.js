@@ -42,14 +42,54 @@ class AddressBook {
 
 
     
-    set firstName(firstName) {this._firstName = firstName;}
-    set lastName(lastName) {return this._lastName = lastName;}
-    set address(address) {this._address = address; }
-    set city(city) { this._city = city; }
-    set state(state) { this._state = state; }
-    set zip (zip) { this._zip = zip;}
-    set phoneNumber(phoneNumber) { this._phoneNumber = phoneNumber;}
-    set email(email) { this._email = email; }
+    set firstName(firstName) {
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        if (nameRegex.test(firstName))
+            this._firstName = firstName;
+        else throw "Name is Incorrect!"    
+        }
+    set lastName(lastName) {
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        if (nameRegex.test(lastName))
+            this._lastName = lastName;
+        else throw "LastName is Incorrect!" 
+    }
+    set address(address) {
+        let nameRegex = RegExp('^[A-Z][a-z][0-9]$');
+        if (nameRegex.test(address))
+            this._address = address;
+        else throw "Address is Incorrect!" 
+    }
+    set city(city) { 
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        if (nameRegex.test(city))
+            this._city = city;
+        else throw "CityName is Incorrect!" 
+    }
+    set state(state) {
+        let nameRegex = RegExp('^[A-Z]{1}[a-z]{3,}$');
+        if (nameRegex.test(state))
+            this._state = state;
+        else throw "StateName is Incorrect!" 
+    }
+    set zip (zip) {
+        let nameRegex = RegExp('^[0-9]*$');
+        if (nameRegex.test(zip))
+            this._zip = zip;
+        else throw "zipcode is Incorrect!" 
+    }
+    set phoneNumber(phoneNumber) {
+        let nameRegex = RegExp('^[0-9]*$');
+        if (nameRegex.test(phoneNumber))
+            this._phoneNumber = phoneNumber;
+        else throw "Phonr Number is Incorrect!" 
+    }
+    set email(email) {
+        let nameRegex = RegExp('/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/');
+        if (nameRegex.test(email))
+            this._email = email;
+        else throw "Email is Incorrect!" 
+    }
 
 
     //method
